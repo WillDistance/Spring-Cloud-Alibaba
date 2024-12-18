@@ -1,0 +1,34 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /study
+
+spring:
+  application:
+    name: nacos-config
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr} #Nacos服务注册中心地址
+        namespace: 31d69b98-e73b-4365-aea8-70373cebe240
+
+      # nacos配置时dataId的默认组成格式：${spring.cloud.nacos.config.prefix}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+      config:
+        enabled: true # 是否开启nacos作为配置中心
+        server-addr: ${spring.cloud.nacos.server-addr} #Nacos作为配置中心地址
+        prefix: ${spring.application.name}
+        file-extension: yaml # 配置文件的格式，指定yaml格式的配置 。目前只支持 properties 和 yaml 类型
+        group: NACOS_CONFIG_GROUP # 组
+
+        namespace: 31d69b98-e73b-4365-aea8-70373cebe240 #命名空间：dev
+        extension-configs: # 应用扩展配置
+          - data-id: user-config-Info.yaml
+            group: NACOS_CONFIG_GROUP
+            refresh: true # 是否支持动态刷新
+
+        shared-configs: # 共享配置
+          - data-id: user-config-Info.yaml
+            group: DEFAULT_GROUP
+            refresh: true # 是否支持动态刷新

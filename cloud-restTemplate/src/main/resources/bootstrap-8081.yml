@@ -1,0 +1,20 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /study
+
+spring:
+  application:
+    name: cloud-restTemplate-8081
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr} #Nacos服务注册中心地址
+
+#自定义配置消费者将要去访问的微服务名称(注册成功进nacos的微服务提供者)  使用ribbon实现负载均衡的时候，服务名称不能用下划线，换成中划线
+service-url:
+  nacos-user-service: http://cloud-restTemplate-8080

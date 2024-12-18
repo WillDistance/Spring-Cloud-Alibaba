@@ -1,0 +1,1521 @@
+{
+	"info": {
+		"_postman_id": "3c103a95-487f-4405-b86c-54c85d777ce5",
+		"name": "Spring-Cloud-Alibaba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "nacos-config",
+			"item": [
+				{
+					"name": "dev",
+					"item": [
+						{
+							"name": "getConfigInfo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/study/nacosConfig/getConfigInfo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"study",
+										"nacosConfig",
+										"getConfigInfo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getModuleDefaultConfigInfo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/study/nacosConfig/getModuleDefaultConfigInfo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"study",
+										"nacosConfig",
+										"getModuleDefaultConfigInfo"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.collectionVariables.set(\"host\", \"http://localhost:8001\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "prod",
+					"item": [
+						{
+							"name": "getConfigInfo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/study/nacosConfig/getConfigInfo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"study",
+										"nacosConfig",
+										"getConfigInfo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getModuleDefaultConfigInfo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/study/nacosConfig/getModuleDefaultConfigInfo",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"study",
+										"nacosConfig",
+										"getModuleDefaultConfigInfo"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.collectionVariables.set(\"host\", \"http://localhost:8002\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cloud-openFeign",
+			"item": [
+				{
+					"name": "openFeign-provider",
+					"item": [
+						{
+							"name": "GetRequestController",
+							"item": [
+								{
+									"name": "getPathParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getRequest/getPathParam/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getRequest",
+												"getPathParam",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getUrlParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getRequest/getUrlParam?paramId=1&paramValue=value&date=2024-01-07 09:13:16",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getRequest",
+												"getUrlParam"
+											],
+											"query": [
+												{
+													"key": "paramId",
+													"value": "1"
+												},
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:16"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getPathAndUrlParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getRequest/getPathAndUrlParam/1?paramValue=value",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getRequest",
+												"getPathAndUrlParam",
+												"1"
+											],
+											"query": [
+												{
+													"key": "paramValue",
+													"value": "value"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getEntityParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getRequest/getEntityParam?paramId=1&paramValue=value&date=2024-01-07 09:13:18",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getRequest",
+												"getEntityParam"
+											],
+											"query": [
+												{
+													"key": "paramId",
+													"value": "1"
+												},
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:18"
+												},
+												{
+													"key": "date",
+													"value": "2024/1/7 18:15:16",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getPathAndEntityParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getRequest/getPathAndEntityParam/1?paramValue=value&date=2024-01-07 09:13:18",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getRequest",
+												"getPathAndEntityParam",
+												"1"
+											],
+											"query": [
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:18"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "paramIdList",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getRequest/getListParam?paramIdList=1,2,3",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getRequest",
+												"getListParam"
+											],
+											"query": [
+												{
+													"key": "paramIdList",
+													"value": "1,2,3"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getMapToTwoEntityParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getRequest/getMapToTwoEntityParam?userId=1&userName=yanlei&birthday=2024-01-07 09:13:17&paramId=2&paramValue=value&date=2024-01-07 09:13:18",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getRequest",
+												"getMapToTwoEntityParam"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "1"
+												},
+												{
+													"key": "userName",
+													"value": "yanlei"
+												},
+												{
+													"key": "birthday",
+													"value": "2024-01-07 09:13:17"
+												},
+												{
+													"key": "paramId",
+													"value": "2"
+												},
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:18"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "PostRequestController",
+							"item": [
+								{
+									"name": "postPathParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/postRequest/postPathParam/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postRequest",
+												"postPathParam",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postUrlParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/postRequest/postUrlParam?paramId=1&paramValue=value&date=2024-01-07 09:13:16",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postRequest",
+												"postUrlParam"
+											],
+											"query": [
+												{
+													"key": "paramId",
+													"value": "1"
+												},
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:16"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postPathAndUrlParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/postRequest/postPathAndUrlParam/1?paramValue=value",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postRequest",
+												"postPathAndUrlParam",
+												"1"
+											],
+											"query": [
+												{
+													"key": "paramValue",
+													"value": "value"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postEntityParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"paramId\": 1,\r\n  \"paramValue\": \"value\",\r\n  \"date\": \"2024-01-07 09:13:18\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/study/postRequest/postEntityParam",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postRequest",
+												"postEntityParam"
+											],
+											"query": [
+												{
+													"key": "date",
+													"value": "2024/1/7 18:15:16",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postPathAndEntityParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"paramId\": 2,\r\n  \"paramValue\": \"value\",\r\n  \"date\": \"2024-01-07 09:13:18\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/study/postRequest/postPathAndEntityParam/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postRequest",
+												"postPathAndEntityParam",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postListParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[1,2,3]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/study/postRequest/postListParam",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postRequest",
+												"postListParam"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postUrlAndEntityParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"paramId\": 2,\r\n  \"paramValue\": \"value\",\r\n  \"date\": \"2024-01-07 09:13:18\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/study/postRequest/postUrlAndEntityParam?paramId=1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postRequest",
+												"postUrlAndEntityParam"
+											],
+											"query": [
+												{
+													"key": "paramId",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "FileRequestController",
+							"item": [
+								{
+									"name": "uploadFile",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/YL/Desktop/logback-spring.xml"
+												},
+												{
+													"key": "fileUploadDto",
+													"value": "{\"fileName\": \"11111111.xml\",\"fileSavePath\": \"\"}",
+													"contentType": "application/json",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/study/fileRequest/uploadFile",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"fileRequest",
+												"uploadFile"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "download",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/YL/Desktop/logback-spring.xml"
+												},
+												{
+													"key": "fileUploadDto",
+													"value": "{\"fileName\": \"11111111.xml\",\"fileSavePath\": \"\"}",
+													"contentType": "application/json",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/study/fileRequest/download?fileName=11111111.xml&fileSavePath=fileSaveDir",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"fileRequest",
+												"download"
+											],
+											"query": [
+												{
+													"key": "fileName",
+													"value": "11111111.xml"
+												},
+												{
+													"key": "fileSavePath",
+													"value": "fileSaveDir"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.collectionVariables.set(\"host\", \"http://localhost:8080\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "openFeign-consumer-basic",
+					"item": [
+						{
+							"name": "GetRequestController",
+							"item": [
+								{
+									"name": "getPathParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getFeign/getPathParam/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getFeign",
+												"getPathParam",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getUrlParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getFeign/getUrlParam?paramId=1&paramValue=value&date=2024-01-07 09:13:16",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getFeign",
+												"getUrlParam"
+											],
+											"query": [
+												{
+													"key": "paramId",
+													"value": "1"
+												},
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:16"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getPathAndUrlParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getFeign/getPathAndUrlParam/2?paramValue=value",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getFeign",
+												"getPathAndUrlParam",
+												"2"
+											],
+											"query": [
+												{
+													"key": "paramValue",
+													"value": "value"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getEntityParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getFeign/getEntityParam?paramId=1&paramValue=value&date=2024-01-07 09:13:18",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getFeign",
+												"getEntityParam"
+											],
+											"query": [
+												{
+													"key": "paramId",
+													"value": "1"
+												},
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:18"
+												},
+												{
+													"key": "date",
+													"value": "2024/1/7 18:15:16",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getPathAndEntityParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getFeign/getPathAndEntityParam/1?paramValue=value&date=2024-01-07 09:13:18",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getFeign",
+												"getPathAndEntityParam",
+												"1"
+											],
+											"query": [
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:18"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getPathAndEntityParam Copy",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getFeign/getListParam?paramIdList=1,2,3",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getFeign",
+												"getListParam"
+											],
+											"query": [
+												{
+													"key": "paramIdList",
+													"value": "1,2,3"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getMapToTwoEntityParam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/getFeign/getMapToTwoEntityParam?userId=1&userName=yanlei&birthday=2024-01-07 09:13:17&paramId=2&paramValue=value&date=2024-01-07 09:13:18",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"getFeign",
+												"getMapToTwoEntityParam"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "1"
+												},
+												{
+													"key": "userName",
+													"value": "yanlei"
+												},
+												{
+													"key": "birthday",
+													"value": "2024-01-07 09:13:17"
+												},
+												{
+													"key": "paramId",
+													"value": "2"
+												},
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:18"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "PostRequestController",
+							"item": [
+								{
+									"name": "postPathParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/postFeign/postPathParam/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postFeign",
+												"postPathParam",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postUrlParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/postFeign/postUrlParam?paramId=1&paramValue=value&date=2024-01-07 09:13:16",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postFeign",
+												"postUrlParam"
+											],
+											"query": [
+												{
+													"key": "paramId",
+													"value": "1"
+												},
+												{
+													"key": "paramValue",
+													"value": "value"
+												},
+												{
+													"key": "date",
+													"value": "2024-01-07 09:13:16"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postPathAndUrlParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/study/postFeign/postPathAndUrlParam/1?paramValue=value",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postFeign",
+												"postPathAndUrlParam",
+												"1"
+											],
+											"query": [
+												{
+													"key": "paramValue",
+													"value": "value"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postEntityParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"paramId\": 1,\r\n  \"paramValue\": \"value\",\r\n  \"date\": \"2024-01-07 09:13:18\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/study/postFeign/postEntityParam",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postFeign",
+												"postEntityParam"
+											],
+											"query": [
+												{
+													"key": "date",
+													"value": "2024/1/7 18:15:16",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postPathAndEntityParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"paramId\": 2,\r\n  \"paramValue\": \"value\",\r\n  \"date\": \"2024-01-07 09:13:18\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/study/postFeign/postPathAndEntityParam/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postFeign",
+												"postPathAndEntityParam",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postListParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[1,2,3]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/study/postFeign/postListParam",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postFeign",
+												"postListParam"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "postUrlAndEntityParam",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"paramId\": 2,\r\n  \"paramValue\": \"value\",\r\n  \"date\": \"2024-01-07 09:13:18\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/study/postFeign/postUrlAndEntityParam?paramId=1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"postFeign",
+												"postUrlAndEntityParam"
+											],
+											"query": [
+												{
+													"key": "paramId",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "FileRequestController",
+							"item": [
+								{
+									"name": "uploadFile",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/YL/Pictures/Camera Roll/719ce766df3998eab8ac7eec4b8df090.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/study/fileFeign/uploadFile",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"fileFeign",
+												"uploadFile"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "uploadFileObj",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/YL/Pictures/Camera Roll/1c7c55a6dbfd7e31bfd23f21d9d7620b.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/study/fileFeign/uploadFileObj",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"fileFeign",
+												"uploadFileObj"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "uploadFileJsonStr",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/YL/Pictures/Camera Roll/art.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/study/fileFeign/uploadFileJsonStr",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"fileFeign",
+												"uploadFileJsonStr"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "uploadFileLocal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/YL/Pictures/Camera Roll/CamilleComic-logo.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/study/fileFeign/uploadFileLocal",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"fileFeign",
+												"uploadFileLocal"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "download",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{host}}/study/fileFeign/download?fileName={{fileName}}&fileSavePath={{fileSavePath}}",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"study",
+												"fileFeign",
+												"download"
+											],
+											"query": [
+												{
+													"key": "fileName",
+													"value": "{{fileName}}"
+												},
+												{
+													"key": "fileSavePath",
+													"value": "{{fileSavePath}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"var path = pm.request.url.getPath();",
+											"if(path.startsWith(\"/study/fileFeign/upload\")){",
+											"    var jsonData = pm.response.json();",
+											"    console.log(jsonData);",
+											"    if(jsonData.code == \"E00000\"){",
+											"        var data = jsonData.data;",
+											"        if(data.fileName && data.fileSavePath){",
+											"            pm.collectionVariables.set(\"fileName\", data.fileName);",
+											"            pm.collectionVariables.set(\"fileSavePath\", data.fileSavePath);",
+											"        }",
+											"    }",
+											"}",
+											""
+										]
+									}
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.collectionVariables.set(\"host\", \"http://localhost:8001\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cloud-restTemplate",
+			"item": [
+				{
+					"name": "8080",
+					"item": [
+						{
+							"name": "consumerMethod",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/study/consumer/consumerMethod/1111",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"study",
+										"consumer",
+										"consumerMethod",
+										"1111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "providerMethod",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": 1,\r\n  \"userName\": \"yanlei\",\r\n  \"birthday\": \"2024-01-11 00:03:24\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/study/provider/providerMethod",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"study",
+										"provider",
+										"providerMethod"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.collectionVariables.set(\"host\", \"http://localhost:8080\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "8081",
+					"item": [
+						{
+							"name": "consumerMethod",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/study/consumer/consumerMethod/1111",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"study",
+										"consumer",
+										"consumerMethod",
+										"1111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "providerMethod",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": 1,\r\n  \"userName\": \"yanlei\",\r\n  \"birthday\": \"2024-01-11 00:03:24\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/study/provider/providerMethod",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"study",
+										"provider",
+										"providerMethod"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.collectionVariables.set(\"host\", \"http://localhost:8081\");"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": ""
+		},
+		{
+			"key": "fileName",
+			"value": ""
+		},
+		{
+			"key": "fileSavePath",
+			"value": ""
+		}
+	]
+}

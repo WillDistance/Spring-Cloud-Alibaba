@@ -1,0 +1,24 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /study
+
+spring:
+  application:
+    name: openFeign-consumer-hystrix
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr} #Nacos服务注册中心地址
+        namespace: 9a5a02e4-a451-4e06-8878-a610de1c2a97
+
+      # nacos配置时dataId的默认组成格式：${spring.cloud.nacos.config.prefix}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+      config:
+        enabled: true # 是否开启nacos作为配置中心
+        server-addr: ${spring.cloud.nacos.server-addr} #Nacos作为配置中心地址
+        prefix: ${spring.application.name}
+        file-extension: yaml # 配置文件的格式，指定yaml格式的配置 。目前只支持 properties 和 yaml 类型
+        namespace: 9a5a02e4-a451-4e06-8878-a610de1c2a97 #命名空间：dev
+        group: OPENFEIGN_PROVIDER_GROUP # 组
